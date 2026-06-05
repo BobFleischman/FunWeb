@@ -1,0 +1,172 @@
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0f0f1a;
+  --surface: #1a1a2e;
+  --accent: #e94560;
+  --accent2: #0f3460;
+  --text: #eaeaea;
+  --muted: #888;
+  --radius: 14px;
+  --transition: 0.3s ease;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Header ── */
+header {
+  text-align: center;
+  padding: 3rem 1rem 1.5rem;
+}
+
+header h1 {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -2px;
+  background: linear-gradient(135deg, var(--accent), #a855f7, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tagline {
+  color: var(--muted);
+  margin-top: 0.5rem;
+  font-size: 1.05rem;
+}
+
+/* ── Main Grid ── */
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 1.5rem;
+  width: 100%;
+  max-width: 960px;
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--surface);
+  border: 1px solid #2a2a40;
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(233, 69, 96, 0.15);
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ── Buttons ── */
+button {
+  cursor: pointer;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  width: fit-content;
+  transition: background var(--transition), transform 0.1s;
+}
+
+button:hover  { background: #c73652; }
+button:active { transform: scale(0.96); }
+
+/* ── Color Section ── */
+#colorDisplay {
+  height: 60px;
+  border-radius: 8px;
+  transition: background-color 0.5s ease;
+  background: #2a2a40;
+}
+
+/* ── Quote Section ── */
+blockquote {
+  font-style: italic;
+  font-size: 1rem;
+  color: #ccc;
+  border-left: 3px solid var(--accent);
+  padding-left: 0.85rem;
+  line-height: 1.6;
+  min-height: 3.5rem;
+}
+
+cite {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ── Counter Section ── */
+.counter-display {
+  font-size: 4rem;
+  font-weight: 900;
+  text-align: center;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.status {
+  font-size: 0.85rem;
+  color: #a855f7;
+  min-height: 1.2rem;
+}
+
+/* ── Emoji Section ── */
+#emojiStage {
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #0f0f1a;
+}
+
+.emoji-drop {
+  position: absolute;
+  font-size: 1.6rem;
+  animation: fall linear forwards;
+  user-select: none;
+}
+
+@keyframes fall {
+  0%   { top: -30px; opacity: 1; }
+  100% { top: 110px; opacity: 0; }
+}
+
+/* ── Footer ── */
+footer {
+  margin-top: auto;
+  padding: 2rem 1rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-align: center;
+}

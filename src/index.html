@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FunWeb</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <h1>FunWeb</h1>
+    <p class="tagline">A little corner of the internet to play around in.</p>
+  </header>
+
+  <main>
+
+    <!-- Color Burst -->
+    <section class="card" id="color-section">
+      <h2>Color Burst</h2>
+      <p>Click the button and watch the background change.</p>
+      <button id="colorBtn">Change Color</button>
+      <div id="colorDisplay"></div>
+    </section>
+
+    <!-- Quote Machine -->
+    <section class="card" id="quote-section">
+      <h2>Quote of the Moment</h2>
+      <blockquote id="quoteText">Click the button to get inspired.</blockquote>
+      <cite id="quoteAuthor"></cite>
+      <br />
+      <button id="quoteBtn">New Quote</button>
+    </section>
+
+    <!-- Counter -->
+    <section class="card" id="counter-section">
+      <h2>Click Counter</h2>
+      <p>How many times can you click in 10 seconds?</p>
+      <div class="counter-display">
+        <span id="countDisplay">0</span>
+      </div>
+      <button id="startBtn">Start!</button>
+      <p id="countStatus" class="status"></p>
+    </section>
+
+    <!-- Emoji Rain -->
+    <section class="card" id="emoji-section">
+      <h2>Emoji Rain</h2>
+      <p>Make it rain!</p>
+      <button id="emojiBtn">Let it Rain</button>
+      <div id="emojiStage"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Built with plain HTML, CSS &amp; JS &mdash; deployed on Azure Static Web Apps.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
